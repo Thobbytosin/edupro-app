@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .header {
+        background-color: #0eaaec;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+      }
+      .content {
+        padding: 20px;
+      }
+      .content h2 {
+        font-size: 22px;
+        color: #0eaaec;
+        margin-top: 0;
+      }
+      .content p {
+        line-height: 1.6;
+      }
+      .order-details {
+        margin-top: 20px;
+        border-top: 1px solid #dddddd;
+        padding-top: 10px;
+      }
+      .order-details table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .order-details th,
+      .order-details td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #dddddd;
+      }
+      .order-details th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #777777;
+        background-color: #f4f4f4;
+        border-top: 1px solid #dddddd;
+      }
+      .footer a {
+        color: #0eaaec;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Order Confirmation</h1>
+      </div>
+      <div class="content">
+        <h2>Thank you for your purchase, <%= order.user %>!</h2>
+        <p>
+          Your order for the following course has been successfully processed:
+        </p>
+
+        <div class="order-details">
+          <table>
+            <tr>
+              <th>Course Id</th>
+              <td><%= order._id %></td>
+            </tr>
+            <tr>
+              <th>Course Name</th>
+              <td><%= order.courseName %></td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td>&#8358; <%= order.price %></td>
+            </tr>
+            <tr>
+              <th>Order Date</th>
+              <td><%= order.date %></td>
+            </tr>
+          </table>
+        </div>
+
+        <p>You can access your course through your account on our platform.</p>
+        <p>
+          If you have any questions, feel free to
+          <a href="mailto:support@example.com">contact us</a>.
+        </p>
+      </div>
+      <div class="footer">
+        <p>
+          &copy; <%= new Date().getFullYear() %> Your Company. All rights
+          reserved.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
