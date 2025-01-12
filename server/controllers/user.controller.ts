@@ -235,7 +235,6 @@ export const updateAccessToken = catchAsyncError(
         return next(new ErrorHandler("could not refresh token", 400));
 
       const session = await redis.get(`user - ${decoded.id as string}`);
-      // console.log(session);
 
       if (!session)
         return next(new ErrorHandler("Session not found / has expired", 422));

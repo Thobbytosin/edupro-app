@@ -241,7 +241,7 @@ export const getCourseByUser = catchAsyncError(
 
       const content = course.courseData;
 
-      res.status(200).json({ success: true, content });
+      res.status(200).json({ success: true, content, courseName: course.name });
     } catch (error: any) {
       return next(new ErrorHandler(error.name, 400));
     }

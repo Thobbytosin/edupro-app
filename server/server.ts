@@ -11,7 +11,7 @@ const server = http.createServer(app);
 dotenv.config();
 
 // const PORT = 8000;
-const host = "192.168.100.117"; // for calling mobile
+const host = "192.168.100.128"; // for calling mobile
 
 // start socket server
 initSocketServer(server);
